@@ -52,4 +52,5 @@ int min(int a,int b);
 int max(int a,int b);
 FlatPoint *flatpoint(int x,int y);
 Point *point(float x,float y,float z);
+#define SOLID 0xffff
 #define INTERFACE 0

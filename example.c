@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
     c->color = rgb;
     canvas_mkimage(c);
 
-    Pixel *white = (unsigned char *)"\xff\x80\x00";
-    canvas_line(c, point(100, 100, 0), point(200, 300, 0), white, 0xffff);
-    canvas_line(c, point(100, 300, 0), point(200, 100, 100), white, 0xffff);
+    Pixel *white = (Pixel *)"\xff\xff\xff";
+    canvas_line(c, point(100, 100, 0), point(200, 300, 0), white, SOLID);
+    canvas_line(c, point(100, 300, 0), point(200, 100, 100), white, SOLID);
 
     canvas_write(c, "filename");
 

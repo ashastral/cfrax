@@ -41,6 +41,8 @@ typedef struct DrawnList_struct {
     DrawnList_struct *next;
 } DrawnList;
 
+#define SOLID 0xffff
+
 #endif
 
 Point *point(float x, float y, float z) {
