@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #include "example.h"
 #include "cfrax.h"
@@ -10,12 +11,16 @@ int main(int argc, char *argv[]) {
     c->width = 500;
     c->height = 500;
     c->depth = 2;
-    c->color = gray;
+    c->color = rgb;
     canvas_mkimage(c);
 
-    canvas_pixel(c, 20, 20, "\xff", 0x8000);
-    canvas_pixel(c, 20, 20, "\xff", 0x8000);
+    Pixel *white = (unsigned char *)"\xff\x80\x00";
+    canvas_line(c, point(100, 100, 0), point(200, 300, 0), white, 0xffff);
+    canvas_line(c, point(100, 300, 0), point(200, 100, 100), white, 0xffff);
+
     canvas_write(c, "filename");
+
+    canvas_free(c);
 
     return 0;
 }
