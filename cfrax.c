@@ -284,7 +284,7 @@ void canvas_write(Canvas *c, char *filename) {
     assert(args);
     assert(rtn != EOF);
     FILE *convert = popen(args, "w");
-    fwrite(flat, sizeof(char), flat_size, convert);
+    fwrite(flat, sizeof(Pixel), flat_size, convert);
     fclose(convert);
 
     free(flat);
