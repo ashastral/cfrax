@@ -6,8 +6,8 @@
 
 static const int BUFSIZE = 256;
 static const char *toolbox_name = NULL;
-static const char *render_command = "convert -depth 8 -size %dx%d %s /home/fraxtil/fraxme/c/render/%s.png";
-static const char *gif_command = "convert -delay 2.5 %s /home/fraxtil/fraxme/c/render/%s*.png /home/fraxtil/fraxme/c/gif/%s.gif";
+static const char *render_command = "convert -depth 8 -size %dx%d %s render/%s.png";
+static const char *gif_command = "convert -delay 2.5 %s render/%s*.png gif/%s.gif";
 
 void toolbox_set_name(const char *name)
 {
